@@ -106,7 +106,7 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
                                                                                      .setLineIndexShortName (0);
     aReadOptions.addColumn (0, "schemeid", UseType.REQUIRED, "string", true);
     aReadOptions.addColumn (1, "iso6523", UseType.REQUIRED, "string", true);
-    aReadOptions.addColumn (2, "schemeagency", UseType.OPTIONAL, "string", false);
+    aReadOptions.addColumn (2, "schemeagency", UseType.REQUIRED, "string", false);
     aReadOptions.addColumn (3, "since", UseType.REQUIRED, "string", false);
     aReadOptions.addColumn (4, "deprecated", UseType.REQUIRED, "boolean", false);
     aReadOptions.addColumn (5, "deprecated-since", UseType.OPTIONAL, "string", false);

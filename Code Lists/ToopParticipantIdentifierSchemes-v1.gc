@@ -20,7 +20,7 @@
       <ShortName>ICD value</ShortName>
           <Data Type="string" />
     </Column>
-      <Column Id="schemeagency" Use="optional">
+      <Column Id="schemeagency" Use="required">
       <ShortName>Issuing Organization</ShortName>
           <Data Type="string" />
     </Column>
