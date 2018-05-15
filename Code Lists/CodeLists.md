@@ -9,6 +9,7 @@ This folder contains the TOOP code lists for:
 ## Version history
 
 * v1 - work in progress
+    * Initial version
 
 ## Usage notes
 
