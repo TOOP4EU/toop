@@ -63,7 +63,9 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
 
   private static void _emitDocumentTypes (final IMicroElement aRootElement) throws JClassAlreadyExistsException
   {
-    final JDefinedClass jEnum = s_aCodeModel._package (RESULT_JAVA_PACKAGE)._enum ("EPredefinedDocumentTypeIdentifier");
+    final JDefinedClass jEnum = s_aCodeModel._package (RESULT_JAVA_PACKAGE)
+                                            ._enum ("EPredefinedDocumentTypeIdentifier")
+                                            ._implements (s_aCodeModel.ref (RESULT_JAVA_PACKAGE + ".IPredefined"));
     jEnum.annotate (CodingStyleguideUnaware.class);
     jEnum.javadoc ().add (DO_NOT_EDIT);
 
@@ -188,7 +190,8 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
   private static void _emitParticipantIdentifierSchemes (final IMicroElement aRootElement) throws JClassAlreadyExistsException
   {
     final JDefinedClass jEnum = s_aCodeModel._package (RESULT_JAVA_PACKAGE)
-                                            ._enum ("EPredefinedParticipantIdentifierScheme");
+                                            ._enum ("EPredefinedParticipantIdentifierScheme")
+                                            ._implements (s_aCodeModel.ref (RESULT_JAVA_PACKAGE + ".IPredefined"));
     jEnum.annotate (CodingStyleguideUnaware.class);
     jEnum.javadoc ().add (DO_NOT_EDIT);
 
@@ -264,7 +267,8 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
 
     // public String getName ()
     m = jEnum.method (JMod.PUBLIC, String.class, "getName");
-    m.annotate (Nullable.class);
+    m.annotate (Nonnull.class);
+    m.annotate (Nonempty.class);
     m.body ()._return (fName);
 
     // public String getID ()
@@ -290,7 +294,9 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
 
   private static void _emitProcessIdentifiers (final IMicroElement aRootElement) throws JClassAlreadyExistsException
   {
-    final JDefinedClass jEnum = s_aCodeModel._package (RESULT_JAVA_PACKAGE)._enum ("EPredefinedProcessIdentifier");
+    final JDefinedClass jEnum = s_aCodeModel._package (RESULT_JAVA_PACKAGE)
+                                            ._enum ("EPredefinedProcessIdentifier")
+                                            ._implements (s_aCodeModel.ref (RESULT_JAVA_PACKAGE + ".IPredefined"));
     jEnum.annotate (CodingStyleguideUnaware.class);
     jEnum.javadoc ().add (DO_NOT_EDIT);
 
@@ -412,7 +418,9 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
 
   private static void _emitTransportProfiles (final IMicroElement aRootElement) throws JClassAlreadyExistsException
   {
-    final JDefinedClass jEnum = s_aCodeModel._package (RESULT_JAVA_PACKAGE)._enum ("EPredefinedTransportProfile");
+    final JDefinedClass jEnum = s_aCodeModel._package (RESULT_JAVA_PACKAGE)
+                                            ._enum ("EPredefinedTransportProfile")
+                                            ._implements (s_aCodeModel.ref (RESULT_JAVA_PACKAGE + ".IPredefined"));
     jEnum.annotate (CodingStyleguideUnaware.class);
     jEnum.javadoc ().add (DO_NOT_EDIT);
 
@@ -457,7 +465,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
 
     // Constructor
     final JMethod jCtor = jEnum.constructor (JMod.PRIVATE);
-    final JVar jName = jCtor.param (JMod.FINAL, String.class, "sBISID");
+    final JVar jName = jCtor.param (JMod.FINAL, String.class, "sName");
     jName.annotate (Nonnull.class);
     jName.annotate (Nonempty.class);
     final JVar jID = jCtor.param (JMod.FINAL, String.class, "sID");
