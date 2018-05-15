@@ -47,21 +47,23 @@ import com.helger.xml.microdom.MicroDocument;
 import com.helger.xml.microdom.serialize.MicroWriter;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
+import eu.toop.codelist.tools.item.AbstractToopCLItem;
+import eu.toop.codelist.tools.item.ToopCLDocTypeItem;
+import eu.toop.codelist.tools.item.ToopCLParticipantIdentifierSchemeItem;
+import eu.toop.codelist.tools.item.ToopCLProcessItem;
+import eu.toop.codelist.tools.item.ToopCLTransportProfileItem;
+
 /**
  * Utility class to create the Genericode files from the Excel code list. Also
  * creates Java source files with the predefined identifiers.
  *
  * @author Philip Helger
  */
-public final class MainCreateCodeListsFromExcel
+public final class MainCreateCodeListsFromExcel extends AbstractMain
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (MainCreateCodeListsFromExcel.class);
-  private static final Version CODELIST_VERSION = new Version (1, 0, 0);
-  private static final String RESULT_XML_DIRECTORY = "../";
   private static final String RESULT_JAVA_PACKAGE = "eu.toop.commons.codelist";
   private static final JCodeModel s_aCodeModel = new JCodeModel ();
-  private static final String DO_NOT_EDIT = "This file was automatically generated.\nDo NOT edit!";
-  private static final boolean DEFAULT_DEPRECATED = false;
 
   @Nullable
   private static String _maskHtml (@Nullable final String s)
@@ -108,11 +110,7 @@ public final class MainCreateCodeListsFromExcel
                                                                                        new URI ("urn:toop.eu:names:identifier:documenttypes"),
                                                                                        new URI ("urn:toop.eu:names:identifier:documenttypes-1.0"),
                                                                                        null);
-    _writeGenericodeFile (aCodeList,
-                          RESULT_XML_DIRECTORY +
-                                     "ToopDocumentTypeIdentifier-v" +
-                                     CODELIST_VERSION.getAsString (false) +
-                                     ".gc");
+    _writeGenericodeFile (aCodeList, getDocTypFilePrefix () + ".gc");
 
     // Save as XML
     final IMicroDocument aDoc = new MicroDocument ();
@@ -122,26 +120,16 @@ public final class MainCreateCodeListsFromExcel
     for (final Row aRow : aCodeList.getSimpleCodeList ().getRow ())
     {
       final String sName = Genericode10Helper.getRowValue (aRow, "name");
-      final String sDocID = Genericode10Helper.getRowValue (aRow, "doctypeid");
+      final String sDocTypeID = Genericode10Helper.getRowValue (aRow, "doctypeid");
       final String sSince = Genericode10Helper.getRowValue (aRow, "since");
       final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                          DEFAULT_DEPRECATED);
+                                                          AbstractToopCLItem.DEFAULT_DEPRECATED);
       final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
-      if (bDeprecated && StringHelper.hasNoText (sDeprecatedSince))
-        throw new IllegalStateException ("Code list entry is deprecated but there is no deprecated-since entry");
 
-      final IMicroElement eAgency = eRoot.appendElement ("document-type");
-      eAgency.setAttribute ("id", sDocID);
-      eAgency.setAttribute ("name", sName);
-      eAgency.setAttribute ("since", sSince);
-      eAgency.setAttribute ("deprecated", bDeprecated);
-      eAgency.setAttribute ("deprecated-since", sDeprecatedSince);
+      final ToopCLDocTypeItem aItem = new ToopCLDocTypeItem (sName, sDocTypeID, sSince, bDeprecated, sDeprecatedSince);
+      eRoot.appendChild (aItem.getAsMicroElement ());
     }
-    MicroWriter.writeToFile (aDoc,
-                             new File (RESULT_XML_DIRECTORY +
-                                       "ToopDocumentTypeIdentifier-v" +
-                                       CODELIST_VERSION.getAsString (false) +
-                                       ".xml"));
+    MicroWriter.writeToFile (aDoc, new File (getDocTypFilePrefix () + ".xml"));
 
     // Create Java source
     try
@@ -158,7 +146,7 @@ public final class MainCreateCodeListsFromExcel
         final String sName = Genericode10Helper.getRowValue (aRow, "name");
         final String sSince = Genericode10Helper.getRowValue (aRow, "since");
         final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                            DEFAULT_DEPRECATED);
+                                                            AbstractToopCLItem.DEFAULT_DEPRECATED);
         final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
         if (bDeprecated && StringHelper.hasNoText (sDeprecatedSince))
           throw new IllegalStateException ("Code list entry is deprecated but there is no deprecated-since entry");
@@ -273,11 +261,7 @@ public final class MainCreateCodeListsFromExcel
                                                                                        new URI ("urn:toop.eu:names:identifier:participantidentifierschemes"),
                                                                                        new URI ("urn:toop.eu:names:identifier:participantidentifierschemes-1.0"),
                                                                                        null);
-    _writeGenericodeFile (aCodeList,
-                          RESULT_XML_DIRECTORY +
-                                     "ToopParticipantIdentifierSchemes-v" +
-                                     CODELIST_VERSION.getAsString (false) +
-                                     ".gc");
+    _writeGenericodeFile (aCodeList, getParticipantIdentifierSchemesFilePrefix () + ".gc");
 
     // Save data also as XML
     final IMicroDocument aDoc = new MicroDocument ();
@@ -291,42 +275,24 @@ public final class MainCreateCodeListsFromExcel
       final String sAgency = Genericode10Helper.getRowValue (aRow, "schemeagency");
       final String sSince = Genericode10Helper.getRowValue (aRow, "since");
       final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                          DEFAULT_DEPRECATED);
+                                                          AbstractToopCLItem.DEFAULT_DEPRECATED);
       final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
       final String sStructure = Genericode10Helper.getRowValue (aRow, "structure");
       final String sDisplay = Genericode10Helper.getRowValue (aRow, "display");
       final String sUsage = Genericode10Helper.getRowValue (aRow, "usage");
 
-      if (StringHelper.hasNoText (sSchemeID))
-        throw new IllegalArgumentException ("schemeID");
-      if (sSchemeID.indexOf (' ') >= 0)
-        throw new IllegalArgumentException ("Scheme IDs are not supposed to contain spaces!");
-      if (StringHelper.hasNoText (sISO6523))
-        throw new IllegalArgumentException ("ISO6523Code");
-      if (!RegExHelper.stringMatchesPattern ("[0-9]{4}", sISO6523))
-        throw new IllegalArgumentException ("The ISO 6523 code '" + sISO6523 + "' does not consist of 4 numbers");
-      if (bDeprecated && StringHelper.hasNoText (sDeprecatedSince))
-        throw new IllegalStateException ("Code list entry is deprecated but there is no deprecated-since entry");
-
-      final IMicroElement eAgency = eRoot.appendElement ("identifier-scheme");
-      eAgency.setAttribute ("schemeid", sSchemeID);
-      eAgency.setAttribute ("agencyname", sAgency);
-      eAgency.setAttribute ("iso6523", sISO6523);
-      eAgency.setAttribute ("since", sSince);
-      eAgency.setAttribute ("deprecated", bDeprecated);
-      eAgency.setAttribute ("deprecated-since", sDeprecatedSince);
-      if (StringHelper.hasText (sStructure))
-        eAgency.appendElement ("structure").appendText (sStructure);
-      if (StringHelper.hasText (sDisplay))
-        eAgency.appendElement ("display").appendText (sDisplay);
-      if (StringHelper.hasText (sUsage))
-        eAgency.appendElement ("usage").appendText (sUsage);
+      final ToopCLParticipantIdentifierSchemeItem aItem = new ToopCLParticipantIdentifierSchemeItem (sSchemeID,
+                                                                                                     sISO6523,
+                                                                                                     sAgency,
+                                                                                                     sSince,
+                                                                                                     bDeprecated,
+                                                                                                     sDeprecatedSince,
+                                                                                                     sStructure,
+                                                                                                     sDisplay,
+                                                                                                     sUsage);
+      eRoot.appendChild (aItem.getAsMicroElement ());
     }
-    MicroWriter.writeToFile (aDoc,
-                             new File (RESULT_XML_DIRECTORY +
-                                       "ToopParticipantIdentifierSchemes-v" +
-                                       CODELIST_VERSION.getAsString (false) +
-                                       ".xml"));
+    MicroWriter.writeToFile (aDoc, new File (getParticipantIdentifierSchemesFilePrefix () + ".xml"));
 
     // Create Java source
     try
@@ -344,7 +310,7 @@ public final class MainCreateCodeListsFromExcel
         final String sAgency = Genericode10Helper.getRowValue (aRow, "schemeagency");
         final String sSince = Genericode10Helper.getRowValue (aRow, "since");
         final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                            DEFAULT_DEPRECATED);
+                                                            AbstractToopCLItem.DEFAULT_DEPRECATED);
         final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
         final String sStructure = Genericode10Helper.getRowValue (aRow, "structure");
         final String sDisplay = Genericode10Helper.getRowValue (aRow, "display");
@@ -452,11 +418,7 @@ public final class MainCreateCodeListsFromExcel
                                                                                        new URI ("urn:toop.eu:names:identifier:process"),
                                                                                        new URI ("urn:toop.eu:names:identifier:process-1.0"),
                                                                                        null);
-    _writeGenericodeFile (aCodeList,
-                          RESULT_XML_DIRECTORY +
-                                     "ToopProcessIdentifier-v" +
-                                     CODELIST_VERSION.getAsString (false) +
-                                     ".gc");
+    _writeGenericodeFile (aCodeList, getProcessFilePrefix () + ".gc");
 
     // Save as XML
     final IMicroDocument aDoc = new MicroDocument ();
@@ -469,24 +431,13 @@ public final class MainCreateCodeListsFromExcel
       final String sID = Genericode10Helper.getRowValue (aRow, "id");
       final String sSince = Genericode10Helper.getRowValue (aRow, "since");
       final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                          DEFAULT_DEPRECATED);
+                                                          AbstractToopCLItem.DEFAULT_DEPRECATED);
       final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
 
-      if (bDeprecated && StringHelper.hasNoText (sDeprecatedSince))
-        throw new IllegalStateException ("Code list entry is deprecated but there is no deprecated-since entry");
-
-      final IMicroElement eAgency = eRoot.appendElement ("process");
-      eAgency.setAttribute ("name", sName);
-      eAgency.setAttribute ("id", sID);
-      eAgency.setAttribute ("since", sSince);
-      eAgency.setAttribute ("deprecated", bDeprecated);
-      eAgency.setAttribute ("deprecated-since", sDeprecatedSince);
+      final ToopCLProcessItem aItem = new ToopCLProcessItem (sName, sID, sSince, bDeprecated, sDeprecatedSince);
+      eRoot.appendChild (aItem.getAsMicroElement ());
     }
-    MicroWriter.writeToFile (aDoc,
-                             new File (RESULT_XML_DIRECTORY +
-                                       "ToopProcessIdentifier-v" +
-                                       CODELIST_VERSION.getAsString (false) +
-                                       ".xml"));
+    MicroWriter.writeToFile (aDoc, new File (getProcessFilePrefix () + ".xml"));
 
     // Create Java source
     try
@@ -502,7 +453,7 @@ public final class MainCreateCodeListsFromExcel
         final String sID = Genericode10Helper.getRowValue (aRow, "id");
         final String sSince = Genericode10Helper.getRowValue (aRow, "since");
         final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                            DEFAULT_DEPRECATED);
+                                                            AbstractToopCLItem.DEFAULT_DEPRECATED);
         final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
 
         final String sEnumConstName = RegExHelper.getAsIdentifier (sID);
@@ -610,11 +561,7 @@ public final class MainCreateCodeListsFromExcel
                                                                                        new URI ("urn:toop.eu:names:identifier:transport-profile"),
                                                                                        new URI ("urn:toop.eu:names:identifier:transport-profile-1.0"),
                                                                                        null);
-    _writeGenericodeFile (aCodeList,
-                          RESULT_XML_DIRECTORY +
-                                     "ToopTransportProfile-v" +
-                                     CODELIST_VERSION.getAsString (false) +
-                                     ".gc");
+    _writeGenericodeFile (aCodeList, getTransportProfilesPrefix () + ".gc");
 
     // Save as XML
     final IMicroDocument aDoc = new MicroDocument ();
@@ -628,25 +575,18 @@ public final class MainCreateCodeListsFromExcel
       final String sID = Genericode10Helper.getRowValue (aRow, "id");
       final String sSince = Genericode10Helper.getRowValue (aRow, "since");
       final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                          DEFAULT_DEPRECATED);
+                                                          AbstractToopCLItem.DEFAULT_DEPRECATED);
       final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
 
-      if (bDeprecated && StringHelper.hasNoText (sDeprecatedSince))
-        throw new IllegalStateException ("Code list entry is deprecated but there is no deprecated-since entry");
-
-      final IMicroElement eAgency = eRoot.appendElement ("transport-profile");
-      eAgency.setAttribute ("name", sName);
-      eAgency.setAttribute ("version", sVersion);
-      eAgency.setAttribute ("id", sID);
-      eAgency.setAttribute ("since", sSince);
-      eAgency.setAttribute ("deprecated", bDeprecated);
-      eAgency.setAttribute ("deprecated-since", sDeprecatedSince);
+      final ToopCLTransportProfileItem aItem = new ToopCLTransportProfileItem (sName,
+                                                                               sVersion,
+                                                                               sID,
+                                                                               sSince,
+                                                                               bDeprecated,
+                                                                               sDeprecatedSince);
+      eRoot.appendChild (aItem.getAsMicroElement ());
     }
-    MicroWriter.writeToFile (aDoc,
-                             new File (RESULT_XML_DIRECTORY +
-                                       "ToopTransportProfile-v" +
-                                       CODELIST_VERSION.getAsString (false) +
-                                       ".xml"));
+    MicroWriter.writeToFile (aDoc, new File (getTransportProfilesPrefix () + ".xml"));
 
     // Create Java source
     try
@@ -664,7 +604,7 @@ public final class MainCreateCodeListsFromExcel
         final String sID = Genericode10Helper.getRowValue (aRow, "id");
         final String sSince = Genericode10Helper.getRowValue (aRow, "since");
         final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
-                                                            DEFAULT_DEPRECATED);
+                                                            AbstractToopCLItem.DEFAULT_DEPRECATED);
         final String sDeprecatedSince = Genericode10Helper.getRowValue (aRow, "deprecated-since");
 
         final String sEnumConstName = RegExHelper.getAsIdentifier (sID);
