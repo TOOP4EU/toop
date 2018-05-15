@@ -88,8 +88,8 @@ public class ToopCLParticipantIdentifierSchemeItem extends AbstractToopCLItem
   public static ToopCLParticipantIdentifierSchemeItem create (@Nonnull final IMicroElement aElement)
   {
     return new ToopCLParticipantIdentifierSchemeItem (aElement.getAttributeValue ("schemeid"),
-                                                      aElement.getAttributeValue ("name"),
                                                       aElement.getAttributeValue ("id"),
+                                                      aElement.getAttributeValue ("name"),
                                                       aElement.getAttributeValue ("since"),
                                                       aElement.getAttributeValueAsBool ("deprecated",
                                                                                         DEFAULT_DEPRECATED),

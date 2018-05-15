@@ -12,8 +12,8 @@ import com.helger.commons.version.Version;
 abstract class AbstractMain
 {
   public static final Version CODELIST_VERSION = new Version (1, 0, 0);
-  protected static final String CL_XML_DIRECTORY = "../";
   public static final String DO_NOT_EDIT = "This file was automatically generated.\nDo NOT edit!";
+  private static final String CL_XML_DIRECTORY = "../";
 
   protected AbstractMain ()
   {}
