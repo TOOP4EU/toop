@@ -472,16 +472,48 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     m.body ()._return (fDeprecatedSince);
 
     // @Nullable public static EPredefinedProcessIdentifier
-    // getFromProcessIdentifierOrNull(@Nullable final String
-    // sProcessID)
+    // getFromProcessIdentifierOrNull(@Nullable final String sID)
     m = jEnum.method (JMod.PUBLIC | JMod.STATIC, jEnum, "getFromProcessIdentifierOrNull");
     {
       m.annotate (Nullable.class);
-      final JVar jValue = m.param (JMod.FINAL, String.class, "sProcessID");
-      jValue.annotate (Nullable.class);
-      final JForEach jForEach = m.body ().forEach (jEnum, "e", jEnum.staticInvoke ("values"));
+      final JVar jArgID = m.param (JMod.FINAL, String.class, "sID");
+      jArgID.annotate (Nullable.class);
+      final JBlock jIf = m.body ()
+                          ._if (s_aCodeModel.ref (StringHelper.class).staticInvoke ("hasText").arg (jArgID))
+                          ._then ();
+      final JForEach jForEach = jIf.forEach (jEnum, "e", jEnum.staticInvoke ("values"));
       jForEach.body ()
-              ._if (jForEach.var ().invoke ("getID").invoke ("equals").arg (jValue))
+              ._if (jForEach.var ().invoke ("getID").invoke ("equals").arg (jArgID))
+              ._then ()
+              ._return (jForEach.var ());
+      m.body ()._return (JExpr._null ());
+    }
+
+    // @Nullable public static EPredefinedProcessIdentifier
+    // getFromProcessIdentifierOrNull(@Nullable final String sScheme, @Nullable
+    // final String sID)
+    m = jEnum.method (JMod.PUBLIC | JMod.STATIC, jEnum, "getFromProcessIdentifierOrNull");
+    {
+      m.annotate (Nullable.class);
+      final JVar jArgScheme = m.param (JMod.FINAL, String.class, "sScheme");
+      jArgScheme.annotate (Nullable.class);
+      final JVar jArgID = m.param (JMod.FINAL, String.class, "sID");
+      jArgID.annotate (Nullable.class);
+      final JBlock jIf = m.body ()
+                          ._if (s_aCodeModel.ref (StringHelper.class)
+                                            .staticInvoke ("hasText")
+                                            .arg (jArgScheme)
+                                            .cand (s_aCodeModel.ref (StringHelper.class)
+                                                               .staticInvoke ("hasText")
+                                                               .arg (jArgID)))
+                          ._then ();
+      final JForEach jForEach = jIf.forEach (jEnum, "e", jEnum.staticInvoke ("values"));
+      jForEach.body ()
+              ._if (jForEach.var ()
+                            .invoke ("getScheme")
+                            .invoke ("equals")
+                            .arg (jArgScheme)
+                            .cand (jForEach.var ().invoke ("getID").invoke ("equals").arg (jArgID)))
               ._then ()
               ._return (jForEach.var ());
       m.body ()._return (JExpr._null ());
