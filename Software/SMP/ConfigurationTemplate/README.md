@@ -11,3 +11,7 @@ This page contains the template configuration for phoss SMP to be deployed at me
     * All properties starting with `smp.keystore.` must be adopted
 * Edit `pd-client.properties` (TOOP Directory Client configuration file)
     * All properties starting with `keystore.` must be adopted. The values are identical to the ones in `smp-server.properties`
+* Edit `webapp.properties` (SMP Server UI configuration file)
+    * Property `webapp.datapath` must be set to the absolute directory, where the persistent runtime data is store
+
+Note: all properties that need modification are also marked with `[CHANGEME]`
