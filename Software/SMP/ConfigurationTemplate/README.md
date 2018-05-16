@@ -2,7 +2,7 @@
 
 This page contains the template configuration for phoss SMP to be deployed at member state level.
 
-The main WAR (Web Application aRchive) of the SMP to be used in a Java Application server (like Tomcat) can be retrieved from http://repo2.maven.org/maven2/com/helger/peppol-smp-server-webapp-xml/5.0.5/peppol-smp-server-webapp-xml-5.0.5.war or see https://github.com/phax/peppol-smp-server/wiki/Download for further options. 
+The main WAR file of the phoss SMP server to be used in a Java Application Server (like Tomcat) can be retrieved from http://repo2.maven.org/maven2/com/helger/peppol-smp-server-webapp-xml/5.0.5/peppol-smp-server-webapp-xml-5.0.5.war or see https://github.com/phax/peppol-smp-server/wiki/Download for further options (like a standalone Docker image). 
 
 ## Tasks
 
@@ -16,6 +16,6 @@ The main WAR (Web Application aRchive) of the SMP to be used in a Java Applicati
 * Edit `webapp.properties` (SMP Server UI configuration file)
     * Property `webapp.datapath` must be set to the absolute directory, where the persistent runtime data is store. When using the provided Docker images, you can stick to `/toop-dir/smp/data` and don't need to change anything.
 
-Note: all properties that need modification are also marked with `[CHANGEME]`
+Note: all properties that need modification are also marked with `[CHANGEME]` in the respective files.
 
-Note: a description on all configuration items is available at https://github.com/phax/peppol-smp-server/wiki/Configuration
+Note: a description on all phoss SMP server configuration items is available at https://github.com/phax/peppol-smp-server/wiki/Configuration
