@@ -249,9 +249,9 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
     public CodeListFile (@Nonnull final String sFilenamePart,
                          @Nonnull final IThrowingConsumer <? super Sheet, Exception> aHandler)
     {
-      m_aFile = new File ("../TOOP CL " +
+      m_aFile = new File ("../Toop" +
                           sFilenamePart +
-                          " v" +
+                          "-v" +
                           CODELIST_VERSION.getAsString (false) +
                           ".xlsx").getAbsoluteFile ();
       if (!m_aFile.exists ())
@@ -262,13 +262,13 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
 
   public static void main (final String [] args) throws Exception
   {
-    for (final CodeListFile aCLF : new CodeListFile [] { new CodeListFile ("Document types",
+    for (final CodeListFile aCLF : new CodeListFile [] { new CodeListFile ("DocumentTypeIdentifiers",
                                                                            MainCreateCodeListsFromExcel::_emitDocumentTypes),
-                                                         new CodeListFile ("Participant identifier schemes",
+                                                         new CodeListFile ("ParticipantIdentifierSchemes",
                                                                            MainCreateCodeListsFromExcel::_emitParticipantIdentifierSchemes),
-                                                         new CodeListFile ("Processes",
+                                                         new CodeListFile ("ProcessIdentifiers",
                                                                            MainCreateCodeListsFromExcel::_emitProcessIdentifiers),
-                                                         new CodeListFile ("Transport profiles",
+                                                         new CodeListFile ("TransportProfiles",
                                                                            MainCreateCodeListsFromExcel::_emitTransportProfiles) })
     {
       // Where is the Excel?
