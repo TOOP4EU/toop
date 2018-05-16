@@ -2,6 +2,8 @@
 
 This page contains the template configuration for phoss SMP to be deployed at member state level.
 
+The main WAR (Web Application aRchive) of the SMP to be used in a Java Application server (like Tomcat) can be retrieved from http://repo2.maven.org/maven2/com/helger/peppol-smp-server-webapp-xml/5.0.5/peppol-smp-server-webapp-xml-5.0.5.war or see https://github.com/phax/peppol-smp-server/wiki/Download for further options. 
+
 ## Tasks
 
 * Create a new JKS keystore with a single SMP key and name the file `playground-keystore.jks`
