@@ -18,6 +18,7 @@ import com.helger.commons.functional.IThrowingConsumer;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
 import com.helger.commons.version.Version;
+import com.helger.jcodemodel.JBlock;
 import com.helger.jcodemodel.JClassAlreadyExistsException;
 import com.helger.jcodemodel.JCodeModel;
 import com.helger.jcodemodel.JDefinedClass;
@@ -208,11 +209,45 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     m = jEnum.method (JMod.PUBLIC | JMod.STATIC, jEnum, "getFromDocumentTypeIdentifierOrNull");
     {
       m.annotate (Nullable.class);
-      final JVar jValue = m.param (JMod.FINAL, String.class, "sDocTypeID");
-      jValue.annotate (Nullable.class);
-      final JForEach jForEach = m.body ().forEach (jEnum, "e", jEnum.staticInvoke ("values"));
+      final JVar jArgID = m.param (JMod.FINAL, String.class, "sID");
+      jArgID.annotate (Nullable.class);
+      final JBlock jIf = m.body ()
+                          ._if (s_aCodeModel.ref (StringHelper.class).staticInvoke ("hasText").arg (jArgID))
+                          ._then ();
+      final JForEach jForEach = jIf.forEach (jEnum, "e", jEnum.staticInvoke ("values"));
       jForEach.body ()
-              ._if (jForEach.var ().invoke ("getID").invoke ("equals").arg (jValue))
+              ._if (jForEach.var ().invoke ("getID").invoke ("equals").arg (jArgID))
+              ._then ()
+              ._return (jForEach.var ());
+      m.body ()._return (JExpr._null ());
+    }
+
+    // @Nullable
+    // public static EPredefinedDocumentTypeIdentifier
+    // getFromDocumentTypeIdentifierOrNull(@Nullable final String sScheme,
+    // @Nullable final String sID)
+    m = jEnum.method (JMod.PUBLIC | JMod.STATIC, jEnum, "getFromDocumentTypeIdentifierOrNull");
+    {
+      m.annotate (Nullable.class);
+      final JVar jArgScheme = m.param (JMod.FINAL, String.class, "sScheme");
+      jArgScheme.annotate (Nullable.class);
+      final JVar jArgID = m.param (JMod.FINAL, String.class, "sID");
+      jArgID.annotate (Nullable.class);
+      final JBlock jIf = m.body ()
+                          ._if (s_aCodeModel.ref (StringHelper.class)
+                                            .staticInvoke ("hasText")
+                                            .arg (jArgScheme)
+                                            .cand (s_aCodeModel.ref (StringHelper.class)
+                                                               .staticInvoke ("hasText")
+                                                               .arg (jArgID)))
+                          ._then ();
+      final JForEach jForEach = jIf.forEach (jEnum, "e", jEnum.staticInvoke ("values"));
+      jForEach.body ()
+              ._if (jForEach.var ()
+                            .invoke ("getScheme")
+                            .invoke ("equals")
+                            .arg (jArgScheme)
+                            .cand (jForEach.var ().invoke ("getID").invoke ("equals").arg (jArgID)))
               ._then ()
               ._return (jForEach.var ());
       m.body ()._return (JExpr._null ());
