@@ -2,6 +2,7 @@ package eu.toop.codelist.tools;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
+import java.util.Locale;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -11,6 +12,8 @@ import org.slf4j.LoggerFactory;
 
 import com.helger.commons.annotation.CodingStyleguideUnaware;
 import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.collection.impl.CommonsHashSet;
+import com.helger.commons.collection.impl.ICommonsSet;
 import com.helger.commons.functional.IThrowingConsumer;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringHelper;
@@ -48,6 +51,30 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
   private static final String RESULT_JAVA_PACKAGE = "eu.toop.commons.codelist";
   private static final JCodeModel s_aCodeModel = new JCodeModel ();
 
+  @Nonnull
+  private static String _getIdentifier (@Nonnull final String sID)
+  {
+    String ret = RegExHelper.getAsIdentifier (sID.toUpperCase (Locale.US), "_");
+    ret = StringHelper.replaceAllRepeatedly (ret, "__", "_");
+    return ret;
+  }
+
+  @Nullable
+  private static String _createDocTypeShortcut (@Nonnull final String sID)
+  {
+    String sSubType = StringHelper.getExploded ("##", sID, 2).get (1);
+    sSubType = StringHelper.trimStart (sSubType, "urn:eu.toop.");
+    sSubType = StringHelper.getExploded ("::", sSubType, 2).get (0);
+    return _getIdentifier (sSubType);
+  }
+
+  @Nullable
+  private static String _createProcessShortcut (@Nonnull final String sID)
+  {
+    final String sSubType = StringHelper.trimStart (sID, "urn:eu.toop.process.");
+    return _getIdentifier (sSubType);
+  }
+
   @Nullable
   private static String _maskHtml (@Nullable final String s)
   {
@@ -71,6 +98,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     jEnum.javadoc ().add (DO_NOT_EDIT);
 
     // Add all enum constants
+    final ICommonsSet <String> aUsedShortcuts = new CommonsHashSet <> ();
     for (final IMicroElement eItem : aRootElement.getAllChildElements ())
     {
       final ToopCLDocTypeItem aItem = ToopCLDocTypeItem.create (eItem);
@@ -80,8 +108,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
       final boolean bDeprecated = aItem.isDeprecated ();
       final String sDeprecatedSince = aItem.getDeprecatedSince ();
 
-      final String sEnumConstName = RegExHelper.getAsIdentifier (sID);
-      final JEnumConstant jEnumConst = jEnum.enumConstant (sEnumConstName);
+      final JEnumConstant jEnumConst = jEnum.enumConstant (_getIdentifier (sID));
       if (bDeprecated)
       {
         jEnumConst.annotate (Deprecated.class);
@@ -101,6 +128,10 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
                                                                               .arg (sDeprecatedSince));
       jEnumConst.javadoc ().add (sName + " - <code>" + sID + "</code><br>");
       jEnumConst.javadoc ().addTag (JDocComment.TAG_SINCE).add ("code list v" + sSince);
+
+      final String sShortcut = _createDocTypeShortcut (sID);
+      if (sShortcut != null && aUsedShortcuts.add (sShortcut))
+        jEnum.field (JMod.PUBLIC | JMod.STATIC | JMod.FINAL, jEnum, sShortcut, jEnumConst);
     }
 
     // constants
@@ -209,7 +240,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
       final String sDisplay = aItem.getDisplay ();
       final String sUsage = aItem.getUsage ();
 
-      final JEnumConstant jEnumConst = jEnum.enumConstant (RegExHelper.getAsIdentifier (aItem.getSchemeID ()));
+      final JEnumConstant jEnumConst = jEnum.enumConstant (_getIdentifier (aItem.getSchemeID ()));
       jEnumConst.arg (JExpr.lit (sName));
       jEnumConst.arg (JExpr.lit (sID));
       jEnumConst.arg (s_aCodeModel.ref (Version.class).staticInvoke ("parse").arg (sSince));
@@ -303,6 +334,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     jEnum.javadoc ().add (DO_NOT_EDIT);
 
     // enum constants
+    final ICommonsSet <String> aUsedShortcuts = new CommonsHashSet <> ();
     for (final IMicroElement eItem : aRootElement.getAllChildElements ())
     {
       final ToopCLProcessItem aItem = ToopCLProcessItem.create (eItem);
@@ -312,8 +344,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
       final boolean bDeprecated = aItem.isDeprecated ();
       final String sDeprecatedSince = aItem.getDeprecatedSince ();
 
-      final String sEnumConstName = RegExHelper.getAsIdentifier (sID);
-      final JEnumConstant jEnumConst = jEnum.enumConstant (sEnumConstName);
+      final JEnumConstant jEnumConst = jEnum.enumConstant (_getIdentifier (sID));
       if (bDeprecated)
       {
         jEnumConst.annotate (Deprecated.class);
@@ -332,6 +363,10 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
                                                                               .arg (sDeprecatedSince));
       jEnumConst.javadoc ().add (sName + " - <code>" + sID + "</code><br>");
       jEnumConst.javadoc ().addTag (JDocComment.TAG_SINCE).add ("code list v" + sSince);
+
+      final String sShortcut = _createProcessShortcut (sID);
+      if (sShortcut != null && aUsedShortcuts.add (sShortcut))
+        jEnum.field (JMod.PUBLIC | JMod.STATIC | JMod.FINAL, jEnum, sShortcut, jEnumConst);
     }
 
     // constants
@@ -436,8 +471,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
       final boolean bDeprecated = aItem.isDeprecated ();
       final String sDeprecatedSince = aItem.getDeprecatedSince ();
 
-      final String sEnumConstName = RegExHelper.getAsIdentifier (sID);
-      final JEnumConstant jEnumConst = jEnum.enumConstant (sEnumConstName);
+      final JEnumConstant jEnumConst = jEnum.enumConstant (_getIdentifier (sID));
       if (bDeprecated)
       {
         jEnumConst.annotate (Deprecated.class);
