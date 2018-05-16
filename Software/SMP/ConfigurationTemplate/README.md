@@ -17,3 +17,5 @@ The main WAR (Web Application aRchive) of the SMP to be used in a Java Applicati
     * Property `webapp.datapath` must be set to the absolute directory, where the persistent runtime data is store. When using the provided Docker images, you can stick to `/toop-dir/smp/data` and don't need to change anything.
 
 Note: all properties that need modification are also marked with `[CHANGEME]`
+
+Note: a description on all configuration items is available at https://github.com/phax/peppol-smp-server/wiki/Configuration
