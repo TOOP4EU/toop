@@ -23,6 +23,5 @@ Note: the `toop-connector.properties` file mentioned below can be referenced via
     * Property `toop.mp.dc.url`
         * Only required when you act as a Data Consumer (DC)
         * Contains the URL where to forward incoming requests to. Must follow the API specified by `toop-interface`
-    * 
 
 Note: all properties that need modification are also marked with `[CHANGEME]` in the respective files.
