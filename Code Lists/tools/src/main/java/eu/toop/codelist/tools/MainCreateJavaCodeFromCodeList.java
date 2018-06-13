@@ -670,5 +670,6 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     s_aCodeModel.build (aWriter);
 
     s_aLogger.info ("Done creating code");
+    s_aLogger.info ("Don't forget to invoke mvn license:format");
   }
 }
