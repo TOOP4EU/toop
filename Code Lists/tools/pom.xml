@@ -38,12 +38,12 @@
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-poi</artifactId>
-      <version>5.0.0</version>
+      <version>5.0.2</version>
     </dependency>
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>jcodemodel</artifactId>
-      <version>3.0.3</version>
+      <version>3.1.0</version>
     </dependency>
     <dependency>
       <groupId>com.helger</groupId>
