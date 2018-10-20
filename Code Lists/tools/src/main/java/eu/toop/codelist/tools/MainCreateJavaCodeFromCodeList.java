@@ -1,7 +1,6 @@
 package eu.toop.codelist.tools;
 
 import java.io.File;
-import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 import javax.annotation.Nonnull;
@@ -30,7 +29,7 @@ import com.helger.jcodemodel.JForEach;
 import com.helger.jcodemodel.JMethod;
 import com.helger.jcodemodel.JMod;
 import com.helger.jcodemodel.JVar;
-import com.helger.jcodemodel.writer.FileCodeWriter;
+import com.helger.jcodemodel.writer.JCMWriter;
 import com.helger.xml.microdom.IMicroDocument;
 import com.helger.xml.microdom.IMicroElement;
 import com.helger.xml.microdom.serialize.MicroReader;
@@ -665,9 +664,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     }
 
     // Write all Java source files
-    final FileCodeWriter aWriter = new FileCodeWriter (new File ("../../../toop-commons/toop-commons/src/main/java"),
-                                                       StandardCharsets.UTF_8);
-    s_aCodeModel.build (aWriter);
+    new JCMWriter (s_aCodeModel).build (new File ("../../../toop-commons/toop-commons/src/main/java"));
 
     s_aLogger.info ("Done creating code");
     s_aLogger.info ("Don't forget to invoke mvn license:format");

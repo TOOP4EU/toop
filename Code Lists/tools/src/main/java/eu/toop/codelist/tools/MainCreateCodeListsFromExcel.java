@@ -278,7 +278,7 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
                                          aCLF.m_aFile.getAbsolutePath () +
                                          "' could not be found!");
 
-      // Interprete as Excel
+      // Interpret as Excel
       try (final Workbook aWB = new XSSFWorkbook (aXls.getInputStream ()))
       {
         // Check whether all required sheets are present
