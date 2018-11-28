@@ -5,7 +5,6 @@
     <artifactId>toop-parent-pom</artifactId>
     <version>1.1.0</version>
   </parent>
-  <groupId>eu.toop</groupId>
   <artifactId>toop-codelist-tools</artifactId>
   <version>0.9.3-SNAPSHOT</version>
   <name>toop-codelist-tools</name>
@@ -15,7 +14,7 @@
       <dependency>
         <groupId>com.helger</groupId>
         <artifactId>ph-commons-parent-pom</artifactId>
-        <version>9.1.8</version>
+        <version>9.2.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -38,7 +37,7 @@
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-poi</artifactId>
-      <version>5.0.2</version>
+      <version>5.0.3</version>
     </dependency>
     <dependency>
       <groupId>com.helger</groupId>
@@ -48,7 +47,7 @@
     <dependency>
       <groupId>com.helger</groupId>
       <artifactId>ph-genericode</artifactId>
-      <version>6.0.0</version>
+      <version>6.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
