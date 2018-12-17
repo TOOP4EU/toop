@@ -2,7 +2,7 @@
 
 This page contains the template configuration for phoss SMP to be deployed at member state level.
 
-The main WAR file of the phoss SMP server to be used in a Java Application Server (like Tomcat) can be retrieved from http://repo2.maven.org/maven2/com/helger/peppol-smp-server-webapp-xml/5.0.6/peppol-smp-server-webapp-xml-5.0.6.war or see https://github.com/phax/peppol-smp-server/wiki/Download for further options (like a standalone Docker image). 
+The main WAR file of the phoss SMP server to be used in a Java Application Server (like Tomcat) can be retrieved from http://repo2.maven.org/maven2/com/helger/peppol-smp-server-webapp-xml/5.0.8/peppol-smp-server-webapp-xml-5.0.8.war or see https://github.com/phax/peppol-smp-server/wiki/Download for further options (like a standalone Docker image). 
 
 ## Tasks
 
