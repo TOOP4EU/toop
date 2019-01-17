@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file was automatically generated.
+Do NOT edit!-->
+<root version="2">
+  <process name="TOOP Request Response for Data" id="urn:eu.toop.process.datarequestresponse" since="1" deprecated="false" />
+  <process name="TOOP Request Response for Documents" id="urn:eu.toop.process.documentrequestresponse" since="1" deprecated="false" />
+</root>
