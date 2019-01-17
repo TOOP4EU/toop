@@ -8,8 +8,10 @@ This folder contains the TOOP code lists for:
 
 ## Version history
 
-* v1 - work in progress
-    * Initial version
+* v2 - work in progress
+    * Added new document type identifiers for new data model version 1.4.0
+* v1 - 2018-06-01
+    * Initial version, since SW release 0.9.1
 
 # Usage notes
 
