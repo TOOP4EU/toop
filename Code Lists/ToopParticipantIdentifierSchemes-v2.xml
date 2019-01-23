@@ -45,6 +45,10 @@ Example: 003710948874</usage>
     <display>None</display>
   </participant-identifier-scheme>
   <participant-identifier-scheme name="Vereniging van Kamers van Koophandel en Fabrieken in Nederland, Scheme" id="0106" since="1" deprecated="false" schemeid="NL:KVK" />
+  <participant-identifier-scheme name="European Commission, Information Directorate, Data Transmission Service, Rue de&#xA;la Loi, 200, B-1049 Brussels, Belgium" id="0130" since="2" deprecated="false" schemeid="EU:NAL">
+    <structure>1) ICD 4 digits, 2) None</structure>
+    <display>None</display>
+  </participant-identifier-scheme>
   <participant-identifier-scheme name="SIA-Società Interbancaria per l'Automazione S.p.A." id="0135" since="1" deprecated="false" schemeid="IT:SIA">
     <structure>Structure of EDI identifier, Character repertoire, The EDI identifier consists of digits only. The identifier has a fixed length. No separators are required. Structure:
 [1234567] [123] [1] [12345], min 11- max 16, &lt; &gt;, A B C D, A: numerical value (7 digits) assigned by Uffico Provinciale IVA (local branch of Ministry of Finance); B: numerical value a (3 digits) identifying the County; C: numerical check digit (1 digit); D: optional numerical value (up to 5 digits0 used by the registered organization (free part). Check digit computation, The check digit algorithm is the one published in the Gazzetta Ufficiale no 345 of December 29 1976.</structure>
@@ -67,4 +71,86 @@ Example: 003710948874</usage>
 The organization number consists of 9 digits where the last digit is a control digit calculated with standard weights, modulus 11. After this, weights 3, 2, 7, 6, 5, 4, 3 and 2 are calculated from the first digit.</structure>
     <display>None</display>
   </participant-identifier-scheme>
+  <participant-identifier-scheme name="UBL.BE" id="0193" since="2" deprecated="false" schemeid="UBLBE">
+    <structure>Maximum 50 characters
+4 Characters fixed length identifying the type 
+Maximum 46 characters for the identifier itself</structure>
+    <display>None</display>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Singaport Nationwide E-Invoice Framework" id="0195" since="2" deprecated="false" schemeid="SG:UEN" />
+  <participant-identifier-scheme name="Icelandic National Registry" id="0196" since="2" deprecated="false" schemeid="IS:KTNR" />
+  <participant-identifier-scheme name="Danish Ministry of the Interior and Health" id="9901" since="2" deprecated="false" schemeid="DK:CPR">
+    <structure>1) First field: ICD: 4 digits, Second field: sequence of digits</structure>
+    <display>None</display>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="The Danish Commerce and Companies Agency" id="9902" since="2" deprecated="false" schemeid="DK:CVR">
+    <usage>7603770123</usage>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Danish Ministry of Taxation, Central Customs and Tax Administration" id="9904" since="2" deprecated="false" schemeid="DK:SE">
+    <usage>DK26769388</usage>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Danish VANS providers" id="9905" since="2" deprecated="false" schemeid="DK:VANS">
+    <usage>DK26769388</usage>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Ufficio responsabile gestione partite IVA" id="9906" since="2" deprecated="false" schemeid="IT:VAT">
+    <usage>IT06363391001</usage>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="TAX Authority" id="9907" since="2" deprecated="false" schemeid="IT:CF">
+    <usage>RSSBBR69C48F839A
+NOTE: The "CF" is a Fiscal Code that can be "personal" or for a "legal entity".
+The CF for legal entities is like the Italian VAT code (IT:VAT)</usage>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Enhetsregisteret ved Bronnoysundregisterne" id="9908" since="2" deprecated="false" schemeid="NO:ORGNR" />
+  <participant-identifier-scheme name="Hungarian VAT number" id="9910" since="2" deprecated="false" schemeid="HU:VAT">
+    <usage>990399123MVA</usage>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Business Registers Network" id="9913" since="2" deprecated="false" schemeid="EU:REID" />
+  <participant-identifier-scheme name="Österreichische Umsatzsteuer-Identifikationsnummer" id="9914" since="2" deprecated="false" schemeid="AT:VAT">
+    <usage>ATU12345678</usage>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Österreichisches Verwaltungs bzw. Organisationskennzeichen" id="9915" since="2" deprecated="false" schemeid="AT:GOV" />
+  <participant-identifier-scheme name="SOCIETY FOR WORLDWIDE INTERBANK FINANCIAL, TELECOMMUNICATION S.W.I.F.T" id="9918" since="2" deprecated="false" schemeid="IBAN" />
+  <participant-identifier-scheme name="Kennziffer des Unternehmensregisters" id="9919" since="2" deprecated="false" schemeid="AT:KUR">
+    <structure>9 characters in total; letter, number x3, letter, number x3, letter</structure>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="Agencia Española de Administración Tributaria" id="9920" since="2" deprecated="false" schemeid="ES:VAT" />
+  <participant-identifier-scheme name="Indice delle Pubbliche Amministrazioni" id="9921" since="2" deprecated="false" schemeid="IT:IPA" />
+  <participant-identifier-scheme name="Andorra VAT number" id="9922" since="2" deprecated="false" schemeid="AD:VAT" />
+  <participant-identifier-scheme name="Albania VAT number" id="9923" since="2" deprecated="false" schemeid="AL:VAT" />
+  <participant-identifier-scheme name="Bosnia and Herzegovina VAT number" id="9924" since="2" deprecated="false" schemeid="BA:VAT" />
+  <participant-identifier-scheme name="Belgium VAT number" id="9925" since="2" deprecated="false" schemeid="BE:VAT" />
+  <participant-identifier-scheme name="Bulgaria VAT number" id="9926" since="2" deprecated="false" schemeid="BG:VAT" />
+  <participant-identifier-scheme name="Switzerland VAT number" id="9927" since="2" deprecated="false" schemeid="CH:VAT" />
+  <participant-identifier-scheme name="Cyprus VAT number" id="9928" since="2" deprecated="false" schemeid="CY:VAT" />
+  <participant-identifier-scheme name="Czech Republic VAT number" id="9929" since="2" deprecated="false" schemeid="CZ:VAT" />
+  <participant-identifier-scheme name="Germany VAT number" id="9930" since="2" deprecated="false" schemeid="DE:VAT" />
+  <participant-identifier-scheme name="Estonia VAT number" id="9931" since="2" deprecated="false" schemeid="EE:VAT" />
+  <participant-identifier-scheme name="United Kingdom VAT number" id="9932" since="2" deprecated="false" schemeid="GB:VAT" />
+  <participant-identifier-scheme name="Greece VAT number" id="9933" since="2" deprecated="false" schemeid="GR:VAT" />
+  <participant-identifier-scheme name="Croatia VAT number" id="9934" since="2" deprecated="false" schemeid="HR:VAT" />
+  <participant-identifier-scheme name="Ireland VAT number" id="9935" since="2" deprecated="false" schemeid="IE:VAT" />
+  <participant-identifier-scheme name="Liechtenstein VAT number" id="9936" since="2" deprecated="false" schemeid="LI:VAT" />
+  <participant-identifier-scheme name="Lithuania VAT number" id="9937" since="2" deprecated="false" schemeid="LT:VAT" />
+  <participant-identifier-scheme name="Luxemburg VAT number" id="9938" since="2" deprecated="false" schemeid="LU:VAT" />
+  <participant-identifier-scheme name="Latvia VAT number" id="9939" since="2" deprecated="false" schemeid="LV:VAT" />
+  <participant-identifier-scheme name="Monaco VAT number" id="9940" since="2" deprecated="false" schemeid="MC:VAT" />
+  <participant-identifier-scheme name="Montenegro VAT number" id="9941" since="2" deprecated="false" schemeid="ME:VAT" />
+  <participant-identifier-scheme name="Macedonia, the former Yugoslav Republic of VAT number" id="9942" since="2" deprecated="false" schemeid="MK:VAT" />
+  <participant-identifier-scheme name="Malta VAT number" id="9943" since="2" deprecated="false" schemeid="MT:VAT" />
+  <participant-identifier-scheme name="Netherlands VAT number" id="9944" since="2" deprecated="false" schemeid="NL:VAT" />
+  <participant-identifier-scheme name="Poland VAT number" id="9945" since="2" deprecated="false" schemeid="PL:VAT" />
+  <participant-identifier-scheme name="Portugal VAT number" id="9946" since="2" deprecated="false" schemeid="PT:VAT" />
+  <participant-identifier-scheme name="Romania VAT number" id="9947" since="2" deprecated="false" schemeid="RO:VAT" />
+  <participant-identifier-scheme name="Serbia VAT number" id="9948" since="2" deprecated="false" schemeid="RS:VAT" />
+  <participant-identifier-scheme name="Slovenia VAT number" id="9949" since="2" deprecated="false" schemeid="SI:VAT" />
+  <participant-identifier-scheme name="Slovakia VAT number" id="9950" since="2" deprecated="false" schemeid="SK:VAT" />
+  <participant-identifier-scheme name="San Marino VAT number" id="9951" since="2" deprecated="false" schemeid="SM:VAT" />
+  <participant-identifier-scheme name="Turkey VAT number" id="9952" since="2" deprecated="false" schemeid="TR:VAT" />
+  <participant-identifier-scheme name="Holy See (Vatican City State) VAT number" id="9953" since="2" deprecated="false" schemeid="VA:VAT" />
+  <participant-identifier-scheme name="Swedish VAT number" id="9955" since="2" deprecated="false" schemeid="SE:VAT" />
+  <participant-identifier-scheme name="Belgian Crossroad Bank of Enterprises " id="9956" since="2" deprecated="false" schemeid="BE:CBE">
+    <structure>Format: 9.999.999.999 - Check: 99 = 97 - (9.999.999.9 modulo 97)</structure>
+  </participant-identifier-scheme>
+  <participant-identifier-scheme name="French VAT number" id="9957" since="2" deprecated="false" schemeid="FR:VAT" />
+  <participant-identifier-scheme name="German Leitweg ID" id="9958" since="2" deprecated="false" schemeid="DE:LID" />
 </root>
