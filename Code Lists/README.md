@@ -9,9 +9,28 @@ This folder contains the TOOP code lists for:
 ## Version history
 
 * v2 - work in progress
-    * Added new document type identifiers for new data model version 1.4.0
+    * Document type identifiers 
+        * Added new identifiers for data model version 1.4.0
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.shipcertificate-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.shipcertificate::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.crewcertificate-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.crewcertificate-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.crewcertificate::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.crewcertificate::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.evidence-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.evidence-list::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.evidence::1.40`
+        * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.evidence::1.40`
     * Participant identifier schemes
         * Added 0130, 0193, 0195, 0196, 9901, 9902, 9904, 9905, 9906, 9907, 9908, 9910, 9913, 9914, 9915, 9918, 9919, 9920, 9921, 9922, 9923, 9924, 9925, 9926, 9927, 9928, 9929, 9930, 9931, 9932, 9933, 9934, 9935, 9936, 9937, 9938, 9939, 9940, 9941, 9942, 9943, 9944, 9945, 9946, 9947, 9948, 9949, 9950, 9951, 9952, 9953, 9955, 9956, 9957, 9958 for alignment with PEPPOL CodeList v4
+    * Process identifiers
+        * Added `TOOP Two Phased Request Response for Documents`
         
 * v1 - 2018-06-01
     * Initial version, since SW release 0.9.1

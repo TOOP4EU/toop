@@ -70,5 +70,20 @@
         <SimpleValue>false</SimpleValue>
       </Value>
     </Row>
+      <Row>
+      <Value ColumnRef="name">
+        <SimpleValue>TOOP Two Phased Request Response for Documents</SimpleValue>
+      </Value>
+          <Value ColumnRef="id">
+        <SimpleValue>urn:eu.toop.process.twophasedrequestresponse 
+</SimpleValue>
+      </Value>
+          <Value ColumnRef="since">
+        <SimpleValue>2</SimpleValue>
+      </Value>
+          <Value ColumnRef="deprecated">
+        <SimpleValue>false</SimpleValue>
+      </Value>
+    </Row>
   </SimpleCodeList>
 </gc:CodeList>
