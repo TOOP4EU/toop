@@ -77,6 +77,34 @@
         <SimpleValue>Registered Organization</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
+        <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization-list::1.40</SimpleValue>
+      </Value>
+          <Value ColumnRef="since">
+        <SimpleValue>2</SimpleValue>
+      </Value>
+          <Value ColumnRef="deprecated">
+        <SimpleValue>false</SimpleValue>
+      </Value>
+    </Row>
+      <Row>
+      <Value ColumnRef="name">
+        <SimpleValue>Registered Organization</SimpleValue>
+      </Value>
+          <Value ColumnRef="doctypeid">
+        <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization-list::1.40</SimpleValue>
+      </Value>
+          <Value ColumnRef="since">
+        <SimpleValue>2</SimpleValue>
+      </Value>
+          <Value ColumnRef="deprecated">
+        <SimpleValue>false</SimpleValue>
+      </Value>
+    </Row>
+      <Row>
+      <Value ColumnRef="name">
+        <SimpleValue>Registered Organization</SimpleValue>
+      </Value>
+          <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization::1.40</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -204,62 +232,6 @@
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.crewcertificate::1.40</SimpleValue>
-      </Value>
-          <Value ColumnRef="since">
-        <SimpleValue>2</SimpleValue>
-      </Value>
-          <Value ColumnRef="deprecated">
-        <SimpleValue>false</SimpleValue>
-      </Value>
-    </Row>
-      <Row>
-      <Value ColumnRef="name">
-        <SimpleValue>Registered Organization</SimpleValue>
-      </Value>
-          <Value ColumnRef="doctypeid">
-        <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization-list::1.40</SimpleValue>
-      </Value>
-          <Value ColumnRef="since">
-        <SimpleValue>2</SimpleValue>
-      </Value>
-          <Value ColumnRef="deprecated">
-        <SimpleValue>false</SimpleValue>
-      </Value>
-    </Row>
-      <Row>
-      <Value ColumnRef="name">
-        <SimpleValue>Registered Organization</SimpleValue>
-      </Value>
-          <Value ColumnRef="doctypeid">
-        <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization-list::1.40</SimpleValue>
-      </Value>
-          <Value ColumnRef="since">
-        <SimpleValue>2</SimpleValue>
-      </Value>
-          <Value ColumnRef="deprecated">
-        <SimpleValue>false</SimpleValue>
-      </Value>
-    </Row>
-      <Row>
-      <Value ColumnRef="name">
-        <SimpleValue>Registered Organization</SimpleValue>
-      </Value>
-          <Value ColumnRef="doctypeid">
-        <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization::1.40</SimpleValue>
-      </Value>
-          <Value ColumnRef="since">
-        <SimpleValue>2</SimpleValue>
-      </Value>
-          <Value ColumnRef="deprecated">
-        <SimpleValue>false</SimpleValue>
-      </Value>
-    </Row>
-      <Row>
-      <Value ColumnRef="name">
-        <SimpleValue>Registered Organization</SimpleValue>
-      </Value>
-          <Value ColumnRef="doctypeid">
-        <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization::1.40</SimpleValue>
       </Value>
           <Value ColumnRef="since">
         <SimpleValue>2</SimpleValue>
