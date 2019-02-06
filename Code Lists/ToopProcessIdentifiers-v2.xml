@@ -4,5 +4,5 @@ Do NOT edit!-->
 <root version="2">
   <process name="TOOP Request Response for Data" id="urn:eu.toop.process.datarequestresponse" since="1" deprecated="false" />
   <process name="TOOP Request Response for Documents" id="urn:eu.toop.process.documentrequestresponse" since="1" deprecated="false" />
-  <process name="TOOP Two Phased Request Response for Documents" id="urn:eu.toop.process.twophasedrequestresponse &#xA;" since="2" deprecated="false" />
+  <process name="TOOP Two Phased Request Response for Documents" id="urn:eu.toop.process.twophasedrequestresponse" since="2" deprecated="false" />
 </root>
