@@ -47,7 +47,7 @@ import eu.toop.codelist.tools.item.ToopCLTransportProfileItem;
  */
 public final class MainCreateJavaCodeFromCodeList extends AbstractMain
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (MainCreateJavaCodeFromCodeList.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (MainCreateJavaCodeFromCodeList.class);
   private static final String RESULT_JAVA_PACKAGE = "eu.toop.commons.codelist";
   private static final JCodeModel s_aCodeModel = new JCodeModel ();
 
@@ -666,7 +666,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     // Write all Java source files
     new JCMWriter (s_aCodeModel).build (new File ("../../../toop-commons/toop-commons/src/main/java"));
 
-    s_aLogger.info ("Done creating code");
-    s_aLogger.info ("Don't forget to invoke mvn license:format");
+    LOGGER.info ("Done creating code");
+    LOGGER.info ("Don't forget to invoke mvn license:format");
   }
 }

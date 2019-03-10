@@ -43,7 +43,7 @@ import eu.toop.codelist.tools.item.ToopCLTransportProfileItem;
  */
 public final class MainCreateCodeListsFromExcel extends AbstractMain
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (MainCreateCodeListsFromExcel.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (MainCreateCodeListsFromExcel.class);
 
   private static void _writeGenericodeFile (@Nonnull final CodeListDocument aCodeList, @Nonnull final String sFilename)
   {
@@ -57,7 +57,7 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
     aMarshaller.setFormattedOutput (true);
     if (aMarshaller.write (aCodeList, new File (sFilename)).isFailure ())
       throw new IllegalStateException ("Failed to write file " + sFilename);
-    s_aLogger.info ("Wrote Genericode file " + sFilename);
+    LOGGER.info ("Wrote Genericode file " + sFilename);
   }
 
   private static void _emitDocumentTypes (final Sheet aDocumentSheet) throws URISyntaxException
@@ -290,6 +290,6 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
       }
     }
 
-    s_aLogger.info ("Done creating code lists");
+    LOGGER.info ("Done creating code lists");
   }
 }
