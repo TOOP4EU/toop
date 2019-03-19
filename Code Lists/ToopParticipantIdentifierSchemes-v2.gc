@@ -20,7 +20,15 @@
       <ShortName>ICD value</ShortName>
           <Data Type="string" />
     </Column>
-      <Column Id="schemeagency" Use="required">
+      <Column Id="country" Use="required">
+      <ShortName>Country</ShortName>
+          <Data Type="string" />
+    </Column>
+      <Column Id="schemename" Use="required">
+      <ShortName>Scheme name</ShortName>
+          <Data Type="string" />
+    </Column>
+      <Column Id="schemeagency" Use="optional">
       <ShortName>Issuing Organization</ShortName>
           <Data Type="string" />
     </Column>
@@ -65,6 +73,12 @@
           <Value ColumnRef="iso6523">
         <SimpleValue>0002</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>FR</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>System Information et Repertoire des Entreprise et des Etablissements: SIRENE</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Institut National de la Statistique et des Etudes Economiques, (I.N.S.E.E.)</SimpleValue>
       </Value>
@@ -89,6 +103,12 @@ single group of 5. Example: 784 301 772 00025</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0007</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>SE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Organisationsnummer</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>The National Tax Board</SimpleValue>
       </Value>
@@ -112,6 +132,12 @@ single group of 5. Example: 784 301 772 00025</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0009</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>FR</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>SIRET-CODE</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>DU PONT DE NEMOURS</SimpleValue>
       </Value>
@@ -134,6 +160,12 @@ single group of 5. Example: 784 301 772 00025</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>0037</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>FI</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>LY-tunnus</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>National Board of Taxes, (Verohallitus)</SimpleValue>
@@ -169,6 +201,12 @@ Example: 003710948874</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0060</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>international</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Data Universal Numbering System (D-U-N-S Number)</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Dun and Bradstreet Ltd</SimpleValue>
       </Value>
@@ -191,6 +229,12 @@ Example: 003710948874</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>0088</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>international</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Global Location Number</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>GS1 GLN</SimpleValue>
@@ -215,6 +259,12 @@ Example: 003710948874</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0096</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>DK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>DANISH CHAMBER OF COMMERCE Scheme</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Danish Chamber of Commerce</SimpleValue>
       </Value>
@@ -237,6 +287,12 @@ Example: 003710948874</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>0097</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>IT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>FTI - Ediforum Italia</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>FTI - Ediforum Italia</SimpleValue>
@@ -261,8 +317,15 @@ Example: 003710948874</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0106</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>NL</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Vereniging van Kamers van Koophandel en Fabrieken in Nederland (Association of
+Chambers of Commerce and Industry in the Netherlands), Scheme</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
-        <SimpleValue>Vereniging van Kamers van Koophandel en Fabrieken in Nederland, Scheme</SimpleValue>
+        <SimpleValue>Vereniging van Kamers van Koophandel en Fabrieken in Nederland</SimpleValue>
       </Value>
           <Value ColumnRef="since">
         <SimpleValue>1</SimpleValue>
@@ -278,9 +341,14 @@ Example: 003710948874</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0130</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>international</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Directorates of the European Commission</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
-        <SimpleValue>European Commission, Information Directorate, Data Transmission Service, Rue de
-la Loi, 200, B-1049 Brussels, Belgium</SimpleValue>
+        <SimpleValue>European Commission, Information Directorate, Data Transmission Service</SimpleValue>
       </Value>
           <Value ColumnRef="since">
         <SimpleValue>2</SimpleValue>
@@ -301,6 +369,12 @@ la Loi, 200, B-1049 Brussels, Belgium</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>0135</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>IT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>SIA Object Identifiers</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>SIA-Società Interbancaria per l'Automazione S.p.A.</SimpleValue>
@@ -326,6 +400,12 @@ la Loi, 200, B-1049 Brussels, Belgium</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0142</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>IT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>SECETI Object Identifiers</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Servizi Centralizzati SECETI S.p.A.</SimpleValue>
       </Value>
@@ -349,6 +429,12 @@ la Loi, 200, B-1049 Brussels, Belgium</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0184</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>DK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>DIGSTORG</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>DIGSTORG</SimpleValue>
       </Value>
@@ -369,8 +455,14 @@ la Loi, 200, B-1049 Brussels, Belgium</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0190</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>NL</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Organisatie Indentificatie Nummer (OIN)</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
-        <SimpleValue>Dutch Originator's Identification Number</SimpleValue>
+        <SimpleValue>Logius</SimpleValue>
       </Value>
           <Value ColumnRef="since">
         <SimpleValue>1</SimpleValue>
@@ -385,6 +477,12 @@ la Loi, 200, B-1049 Brussels, Belgium</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>0191</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>EE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Company code</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Centre of Registers and Information Systems of the Ministry of Justice</SimpleValue>
@@ -409,6 +507,12 @@ la Loi, 200, B-1049 Brussels, Belgium</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0192</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>NO</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Organisasjonsnummer</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>The Brønnøysund Register Centre</SimpleValue>
       </Value>
@@ -432,6 +536,12 @@ The organization number consists of 9 digits where the last digit is a control d
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>0193</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>BE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>UBL.BE Party Identifier</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>UBL.BE</SimpleValue>
@@ -458,8 +568,14 @@ Maximum 46 characters for the identifier itself</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>0195</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>international</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Singaport Nationwide E-Invoice Framework</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemeagency">
+        <SimpleValue>lnfocomm Media Development Authority</SimpleValue>
       </Value>
           <Value ColumnRef="since">
         <SimpleValue>2</SimpleValue>
@@ -474,6 +590,12 @@ Maximum 46 characters for the identifier itself</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>0196</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>IS</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Icelandic identifier</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Icelandic National Registry</SimpleValue>
@@ -491,6 +613,12 @@ Maximum 46 characters for the identifier itself</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>9901</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>DK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Danish Ministry of the Interior and Health</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Danish Ministry of the Interior and Health</SimpleValue>
@@ -515,6 +643,12 @@ Maximum 46 characters for the identifier itself</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9902</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>DK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>The Danish Commerce and Companies Agency</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>The Danish Commerce and Companies Agency</SimpleValue>
       </Value>
@@ -534,6 +668,12 @@ Maximum 46 characters for the identifier itself</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>9904</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>DK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Danish Ministry of Taxation, Central Customs and Tax Administration</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Danish Ministry of Taxation, Central Customs and Tax Administration</SimpleValue>
@@ -555,6 +695,12 @@ Maximum 46 characters for the identifier itself</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9905</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>DK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Danish VANS providers</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Danish VANS providers</SimpleValue>
       </Value>
@@ -575,6 +721,12 @@ Maximum 46 characters for the identifier itself</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9906</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>IT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Ufficio responsabile gestione partite IVA</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Ufficio responsabile gestione partite IVA</SimpleValue>
       </Value>
@@ -594,6 +746,12 @@ Maximum 46 characters for the identifier itself</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>9907</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>IT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>TAX Authority</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>TAX Authority</SimpleValue>
@@ -617,6 +775,12 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9908</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>NO</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Organisasjonsnummer</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Enhetsregisteret ved Bronnoysundregisterne</SimpleValue>
       </Value>
@@ -634,7 +798,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9910</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>HU</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Hungarian VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -654,6 +821,12 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9913</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>international</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Business Registers Network</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Business Registers Network</SimpleValue>
       </Value>
@@ -671,7 +844,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9914</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>AT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Österreichische Umsatzsteuer-Identifikationsnummer</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -691,7 +867,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9915</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>AT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Österreichisches Verwaltungs bzw. Organisationskennzeichen</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -707,6 +886,12 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>9918</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>international</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>IBAN</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>SOCIETY FOR WORLDWIDE INTERBANK FINANCIAL, TELECOMMUNICATION S.W.I.F.T</SimpleValue>
@@ -725,7 +910,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9919</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>AT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Kennziffer des Unternehmensregisters</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -745,6 +933,12 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9920</SimpleValue>
       </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>ES</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Agencia Española de Administración Tributaria</SimpleValue>
+      </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Agencia Española de Administración Tributaria</SimpleValue>
       </Value>
@@ -761,6 +955,12 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>9921</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>IT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Indice delle Pubbliche Amministrazioni</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Indice delle Pubbliche Amministrazioni</SimpleValue>
@@ -779,7 +979,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9922</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>AD</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Andorra VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -796,7 +999,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9923</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>AL</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Albania VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -813,7 +1019,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9924</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>BA</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Bosnia and Herzegovina VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -830,7 +1039,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9925</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>BE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Belgium VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -847,7 +1059,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9926</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>BG</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Bulgaria VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -864,7 +1079,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9927</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>CH</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Switzerland VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -881,7 +1099,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9928</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>CY</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Cyprus VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -898,7 +1119,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9929</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>CZ</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Czech Republic VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -915,7 +1139,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9930</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>DE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Germany VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -932,7 +1159,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9931</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>EE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Estonia VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -949,7 +1179,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9932</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>GB</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>United Kingdom VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -966,7 +1199,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9933</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>GR</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Greece VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -983,7 +1219,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9934</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>HR</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Croatia VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1000,7 +1239,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9935</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>IE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Ireland VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1017,7 +1259,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9936</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>LI</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Liechtenstein VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1034,7 +1279,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9937</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>LT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Lithuania VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1051,7 +1299,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9938</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>LU</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Luxemburg VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1068,7 +1319,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9939</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>LV</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Latvia VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1085,7 +1339,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9940</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>MC</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Monaco VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1102,7 +1359,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9941</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>ME</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Montenegro VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1119,7 +1379,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9942</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>MK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Macedonia, the former Yugoslav Republic of VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1136,7 +1399,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9943</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>MT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Malta VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1153,7 +1419,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9944</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>NL</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Netherlands VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1170,7 +1439,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9945</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>PL</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Poland VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1187,7 +1459,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9946</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>PT</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Portugal VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1204,7 +1479,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9947</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>RO</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Romania VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1221,7 +1499,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9948</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>RS</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Serbia VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1238,7 +1519,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9949</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>SI</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Slovenia VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1255,7 +1539,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9950</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>SK</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Slovakia VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1272,7 +1559,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9951</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>SM</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>San Marino VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1289,7 +1579,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9952</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>TR</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Turkey VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1306,7 +1599,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9953</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>VA</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Holy See (Vatican City State) VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1323,7 +1619,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9955</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>SE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>Swedish VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1339,6 +1638,12 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
       </Value>
           <Value ColumnRef="iso6523">
         <SimpleValue>9956</SimpleValue>
+      </Value>
+          <Value ColumnRef="country">
+        <SimpleValue>BE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
+        <SimpleValue>Belgian Crossroad Bank of Enterprise number</SimpleValue>
       </Value>
           <Value ColumnRef="schemeagency">
         <SimpleValue>Belgian Crossroad Bank of Enterprises </SimpleValue>
@@ -1360,7 +1665,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9957</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>FR</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>French VAT number</SimpleValue>
       </Value>
           <Value ColumnRef="since">
@@ -1377,7 +1685,10 @@ The CF for legal entities is like the Italian VAT code (IT:VAT)</SimpleValue>
           <Value ColumnRef="iso6523">
         <SimpleValue>9958</SimpleValue>
       </Value>
-          <Value ColumnRef="schemeagency">
+          <Value ColumnRef="country">
+        <SimpleValue>DE</SimpleValue>
+      </Value>
+          <Value ColumnRef="schemename">
         <SimpleValue>German Leitweg ID</SimpleValue>
       </Value>
           <Value ColumnRef="since">

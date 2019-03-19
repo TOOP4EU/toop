@@ -3,6 +3,7 @@ package eu.toop.codelist.tools;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Locale;
 
 import javax.annotation.Nonnull;
 
@@ -15,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import com.helger.commons.functional.IThrowingConsumer;
 import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.locale.country.CountryCache;
 import com.helger.commons.string.StringParser;
 import com.helger.genericode.Genericode10CodeListMarshaller;
 import com.helger.genericode.Genericode10Helper;
@@ -106,13 +108,15 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
                                                                                      .setLineIndexShortName (0);
     aReadOptions.addColumn (0, "schemeid", UseType.REQUIRED, "string", true);
     aReadOptions.addColumn (1, "iso6523", UseType.REQUIRED, "string", true);
-    aReadOptions.addColumn (2, "schemeagency", UseType.REQUIRED, "string", false);
-    aReadOptions.addColumn (3, "since", UseType.REQUIRED, "string", false);
-    aReadOptions.addColumn (4, "deprecated", UseType.REQUIRED, "boolean", false);
-    aReadOptions.addColumn (5, "deprecated-since", UseType.OPTIONAL, "string", false);
-    aReadOptions.addColumn (6, "structure", UseType.OPTIONAL, "string", false);
-    aReadOptions.addColumn (7, "display", UseType.OPTIONAL, "string", false);
-    aReadOptions.addColumn (8, "usage", UseType.OPTIONAL, "string", false);
+    aReadOptions.addColumn (2, "country", UseType.REQUIRED, "string", false);
+    aReadOptions.addColumn (3, "schemename", UseType.REQUIRED, "string", false);
+    aReadOptions.addColumn (4, "schemeagency", UseType.OPTIONAL, "string", false);
+    aReadOptions.addColumn (5, "since", UseType.REQUIRED, "string", false);
+    aReadOptions.addColumn (6, "deprecated", UseType.REQUIRED, "boolean", false);
+    aReadOptions.addColumn (7, "deprecated-since", UseType.OPTIONAL, "string", false);
+    aReadOptions.addColumn (8, "structure", UseType.OPTIONAL, "string", false);
+    aReadOptions.addColumn (9, "display", UseType.OPTIONAL, "string", false);
+    aReadOptions.addColumn (10, "usage", UseType.OPTIONAL, "string", false);
 
     // Convert to GeneriCode
     final CodeListDocument aCodeList = ExcelSheetToCodeList10.convertToSimpleCodeList (aParticipantSheet,
@@ -133,7 +137,9 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
     {
       final String sSchemeID = Genericode10Helper.getRowValue (aRow, "schemeid");
       final String sISO6523 = Genericode10Helper.getRowValue (aRow, "iso6523");
-      final String sAgency = Genericode10Helper.getRowValue (aRow, "schemeagency");
+      final String sCountryCode = Genericode10Helper.getRowValue (aRow, "country");
+      final String sSchemeName = Genericode10Helper.getRowValue (aRow, "schemename");
+      final String sSchemeAgency = Genericode10Helper.getRowValue (aRow, "schemeagency");
       final String sSince = Genericode10Helper.getRowValue (aRow, "since");
       final boolean bDeprecated = StringParser.parseBool (Genericode10Helper.getRowValue (aRow, "deprecated"),
                                                           AbstractToopCLItem.DEFAULT_DEPRECATED);
@@ -142,9 +148,21 @@ public final class MainCreateCodeListsFromExcel extends AbstractMain
       final String sDisplay = Genericode10Helper.getRowValue (aRow, "display");
       final String sUsage = Genericode10Helper.getRowValue (aRow, "usage");
 
+      // Check values
+      {
+        if (!"international".equals (sCountryCode))
+        {
+          final Locale aCountry = CountryCache.getInstance ().getCountry (sCountryCode);
+          if (aCountry == null)
+            throw new IllegalStateException ("Invalid country code '" + sCountryCode + "' provided");
+        }
+      }
+
       final ToopCLParticipantIdentifierSchemeItem aItem = new ToopCLParticipantIdentifierSchemeItem (sSchemeID,
                                                                                                      sISO6523,
-                                                                                                     sAgency,
+                                                                                                     sCountryCode,
+                                                                                                     sSchemeName,
+                                                                                                     sSchemeAgency,
                                                                                                      sSince,
                                                                                                      bDeprecated,
                                                                                                      sDeprecatedSince,

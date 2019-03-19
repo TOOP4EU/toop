@@ -266,7 +266,9 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     {
       final ToopCLParticipantIdentifierSchemeItem aItem = ToopCLParticipantIdentifierSchemeItem.create (eItem);
       final String sID = aItem.getID ();
+      final String sCountryCode = aItem.getCountryCode ();
       final String sName = aItem.getName ();
+      final String sSchemeAgency = aItem.getSchemeAgency ();
       final String sSince = aItem.getSince ();
       final boolean bDeprecated = aItem.isDeprecated ();
       final String sDeprecatedSince = aItem.getDeprecatedSince ();
@@ -277,6 +279,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
       final JEnumConstant jEnumConst = jEnum.enumConstant (_getIdentifier (aItem.getSchemeID ()));
       jEnumConst.arg (JExpr.lit (sName));
       jEnumConst.arg (JExpr.lit (sID));
+      jEnumConst.arg ("international".equals (sCountryCode) ? JExpr._null () : JExpr.lit (sCountryCode));
       jEnumConst.arg (s_aCodeModel.ref (Version.class).staticInvoke ("parse").arg (sSince));
       jEnumConst.arg (bDeprecated ? JExpr.TRUE : JExpr.FALSE);
       jEnumConst.arg (StringHelper.hasNoText (sDeprecatedSince) ? JExpr._null ()
@@ -293,6 +296,8 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
                         sDeprecatedSince +
                         " and should not be used to issue new identifiers!</b><br>");
       }
+      if (StringHelper.hasText (sSchemeAgency))
+        jEnumConst.javadoc ().add ("\nScheme agency: " + _maskHtml (sSchemeAgency) + "<br>");
       if (StringHelper.hasText (sStructure))
         jEnumConst.javadoc ().add ("\nStructure of the code: " + _maskHtml (sStructure) + "<br>");
       if (StringHelper.hasText (sDisplay))
@@ -305,6 +310,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     // fields
     final JFieldVar fName = jEnum.field (JMod.PRIVATE | JMod.FINAL, String.class, "m_sName");
     final JFieldVar fID = jEnum.field (JMod.PRIVATE | JMod.FINAL, String.class, "m_sID");
+    final JFieldVar fCountryCode = jEnum.field (JMod.PRIVATE | JMod.FINAL, String.class, "m_sCountryCode");
     final JFieldVar fSince = jEnum.field (JMod.PRIVATE | JMod.FINAL, Version.class, "m_aSince");
     final JFieldVar fDeprecated = jEnum.field (JMod.PRIVATE | JMod.FINAL, boolean.class, "m_bDeprecated");
     final JFieldVar fDeprecatedSince = jEnum.field (JMod.PRIVATE | JMod.FINAL, Version.class, "m_aDeprecatedSince");
@@ -317,6 +323,8 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     final JVar jID = jCtor.param (JMod.FINAL, String.class, "sID");
     jID.annotate (Nonnull.class);
     jID.annotate (Nonempty.class);
+    final JVar jCountryCode = jCtor.param (JMod.FINAL, String.class, "sCountryCode");
+    jCountryCode.annotate (Nullable.class);
     final JVar jSince = jCtor.param (JMod.FINAL, Version.class, "aSince");
     jSince.annotate (Nonnull.class);
     final JVar jDeprecated = jCtor.param (JMod.FINAL, boolean.class, "bDeprecated");
@@ -325,6 +333,7 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     jCtor.body ()
          .assign (fName, jName)
          .assign (fID, jID)
+         .assign (fCountryCode, jCountryCode)
          .assign (fSince, jSince)
          .assign (fDeprecated, jDeprecated)
          .assign (fDeprecatedSince, jDeprecatedSince);
@@ -342,6 +351,15 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
     m.annotate (Nonnull.class);
     m.annotate (Nonempty.class);
     m.body ()._return (fID);
+
+    // public String getCountryCode ()
+    m = jEnum.method (JMod.PUBLIC, String.class, "getCountryCode");
+    m.annotate (Nullable.class);
+    m.body ()._return (fCountryCode);
+
+    // public boolean isInternational ()
+    m = jEnum.method (JMod.PUBLIC, boolean.class, "isInternational");
+    m.body ()._return (fCountryCode.eqNull ());
 
     // public Version getSince ()
     m = jEnum.method (JMod.PUBLIC, Version.class, "getSince");
