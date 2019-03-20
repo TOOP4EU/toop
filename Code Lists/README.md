@@ -6,9 +6,11 @@ This folder contains the TOOP code lists for:
 * Processes
 * Transport profiles
 
+Latest release: **v2**
+
 ## Version history
 
-* v2 - work in progress
+* v2 - 2019-03-20
     * Document type identifiers 
         * Added new identifiers for data model version 1.4.0
         * Added new WP3 document type `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate-list::1.40`
