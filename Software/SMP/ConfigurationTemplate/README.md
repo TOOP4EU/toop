@@ -2,7 +2,7 @@
 
 This page contains the template configuration for phoss SMP to be deployed at member state level.
 
-The main WAR file of the phoss SMP server to be used in a Java Application Server (like Tomcat) can be retrieved from http://repo2.maven.org/maven2/com/helger/peppol-smp-server-webapp-xml/5.0.8/peppol-smp-server-webapp-xml-5.0.8.war or see https://github.com/phax/peppol-smp-server/wiki/Download for further options (like a standalone Docker image). 
+The main WAR file of the phoss SMP server to be used in a Java Application Server (like Tomcat) can be retrieved from http://repo2.maven.org/maven2/com/helger/peppol-smp-server-webapp-xml/5.1.1/peppol-smp-server-webapp-xml-5.1.1.war or see https://github.com/phax/peppol-smp-server/wiki/Download for further options (like a standalone Docker image). 
 
 ## Tasks
 
@@ -13,6 +13,7 @@ The main WAR file of the phoss SMP server to be used in a Java Application Serve
     * All properties starting with `smp.keystore.` must be adopted
     * Property `smp.publicurl` must be set
     * See https://github.com/phax/peppol-smp-server/wiki/Configuration#smp-serverproperties for details
+    * Ensure to setup the correct SML configuration as indicated by chapter "Registration to SML" at http://wiki.ds.unipi.gr/display/TOOP/SMP+Deployment+and+Configuration+Guide
 * Edit `pd-client.properties` (TOOP Directory Client configuration file)
     * All properties starting with `keystore.` must be adopted. The values are identical to the ones in `smp-server.properties`
     * See https://github.com/phax/peppol-smp-server/wiki/Configuration#pd-clientproperties for details
