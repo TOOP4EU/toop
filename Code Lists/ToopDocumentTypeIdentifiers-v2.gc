@@ -74,7 +74,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Registered Organization</SimpleValue>
+        <SimpleValue>Registered Organization List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization-list::1.40</SimpleValue>
@@ -88,7 +88,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Registered Organization</SimpleValue>
+        <SimpleValue>Registered Organization List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization-list::1.40</SimpleValue>
@@ -130,7 +130,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Ship Certificate</SimpleValue>
+        <SimpleValue>Ship Certificate List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate-list::1.40</SimpleValue>
@@ -144,7 +144,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Ship Certificate</SimpleValue>
+        <SimpleValue>Ship Certificate List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.shipcertificate-list::1.40</SimpleValue>
@@ -186,7 +186,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Crew Certificate</SimpleValue>
+        <SimpleValue>Crew Certificate List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.crewcertificate-list::1.40</SimpleValue>
@@ -200,7 +200,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Crew Certificate</SimpleValue>
+        <SimpleValue>Crew Certificate List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.crewcertificate-list::1.40</SimpleValue>
@@ -242,7 +242,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Evidence</SimpleValue>
+        <SimpleValue>Evidence List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.evidence-list::1.40</SimpleValue>
@@ -256,7 +256,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>Evidence</SimpleValue>
+        <SimpleValue>Evidence List</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.evidence-list::1.40</SimpleValue>
