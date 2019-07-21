@@ -129,9 +129,12 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
       jEnumConst.javadoc ().add (sName + " - <code>" + sID + "</code><br>");
       jEnumConst.javadoc ().addTag (JDocComment.TAG_SINCE).add ("code list v" + sSince);
 
-      final String sShortcut = _createDocTypeShortcut (sID);
-      if (sShortcut != null && aUsedShortcuts.add (sShortcut))
-        jEnum.field (JMod.PUBLIC | JMod.STATIC | JMod.FINAL, jEnum, sShortcut, jEnumConst);
+      if (!bDeprecated)
+      {
+        final String sShortcut = _createDocTypeShortcut (sID);
+        if (sShortcut != null && aUsedShortcuts.add (sShortcut))
+          jEnum.field (JMod.PUBLIC | JMod.STATIC | JMod.FINAL, jEnum, sShortcut, jEnumConst);
+      }
     }
 
     // constants
@@ -416,9 +419,12 @@ public final class MainCreateJavaCodeFromCodeList extends AbstractMain
       jEnumConst.javadoc ().add (sName + " - <code>" + sID + "</code><br>");
       jEnumConst.javadoc ().addTag (JDocComment.TAG_SINCE).add ("code list v" + sSince);
 
-      final String sShortcut = _createProcessShortcut (sID);
-      if (sShortcut != null && aUsedShortcuts.add (sShortcut))
-        jEnum.field (JMod.PUBLIC | JMod.STATIC | JMod.FINAL, jEnum, sShortcut, jEnumConst);
+      if (!bDeprecated)
+      {
+        final String sShortcut = _createProcessShortcut (sID);
+        if (sShortcut != null && aUsedShortcuts.add (sShortcut))
+          jEnum.field (JMod.PUBLIC | JMod.STATIC | JMod.FINAL, jEnum, sShortcut, jEnumConst);
+      }
     }
 
     // constants
