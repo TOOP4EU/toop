@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file was automatically generated.
+Do NOT edit!-->
+<root version="3">
+  <process name="TOOP Request Response for Data" id="urn:eu.toop.process.datarequestresponse" since="1" deprecated="false" />
+  <process name="TOOP Request Response for Documents" id="urn:eu.toop.process.documentrequestresponse" since="1" deprecated="false" />
+  <process name="TOOP Two Phased Request Response for Documents" id="urn:eu.toop.process.twophasedrequestresponse" since="2" deprecated="false" />
+  <process name="TOOP DataQuery" id="urn:eu.toop.process.dataquery" since="3" deprecated="false" />
+  <process name="TOOP DocumentQuery" id="urn:eu.toop.process.documentquery" since="3" deprecated="false" />
+  <process name="TOOP DocumentReferenceQuery" id="urn:eu.toop.process.documentreferencequery" since="3" deprecated="false" />
+</root>
