@@ -6,11 +6,11 @@ This folder contains the TOOP code lists for:
 * Processes
 * Transport profiles
 
-Latest release: **v2**
+Latest release: **v3**
 
 ## Version history
 
-* v3 - work in progress
+* v3 - 2020-05-29
     * Document type identifiers 
       * Added "EDM Concept Request on RegisteredOrganisation Data" - `RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.0`
       * Added "EDM Document Request on Fincancial Record" - `FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.0`
