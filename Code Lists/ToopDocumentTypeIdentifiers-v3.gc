@@ -298,7 +298,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>EDM Concept Request</SimpleValue>
+        <SimpleValue>EDM Concept Request on RegisteredOrganisation Data</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.0</SimpleValue>
@@ -312,7 +312,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>EDM Document Request</SimpleValue>
+        <SimpleValue>EDM Document Request on Fincancial Record</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.0</SimpleValue>
