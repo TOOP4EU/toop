@@ -14,8 +14,7 @@ Latest release: **v2**
     * Document type identifiers 
       * Added "EDM Concept Request on RegisteredOrganisation Data" - `RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.0`
       * Added "EDM Document Request on Fincancial Record" - `FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.0`
-      * Added "EDM Response (Concept)" - `QueryResponse::toop-edm:v2.0`
-      * Added "EDM Response (Document)" - `QueryResponse::toop-edm:v2.0`
+      * Added "EDM Response" - `QueryResponse::toop-edm:v2.0`
     * Process identifiers
       * Added "TOOP DataQuery" - `urn:eu.toop.process.dataquery`
       * Added "TOOP DocumentQuery" - `urn:eu.toop.process.documentquery`

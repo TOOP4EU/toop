@@ -22,6 +22,5 @@ Do NOT edit!-->
   <document-type name="Evidence Response" id="urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.evidence::1.40" since="2" deprecated="false" />
   <document-type name="EDM Concept Request on RegisteredOrganisation Data" id="RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.0" since="3" deprecated="false" />
   <document-type name="EDM Document Request on Fincancial Record" id="FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.0" since="3" deprecated="false" />
-  <document-type name="EDM Response (Concept)" id="QueryResponse::toop-edm:v2.0" since="3" deprecated="false" />
-  <document-type name="EDM Response (Document)" id="QueryResponse::toop-edm:v2.0" since="3" deprecated="false" />
+  <document-type name="EDM Response" id="QueryResponse::toop-edm:v2.0" since="3" deprecated="false" />
 </root>

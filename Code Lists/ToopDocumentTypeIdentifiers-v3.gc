@@ -326,21 +326,7 @@
     </Row>
       <Row>
       <Value ColumnRef="name">
-        <SimpleValue>EDM Response (Concept)</SimpleValue>
-      </Value>
-          <Value ColumnRef="doctypeid">
-        <SimpleValue>QueryResponse::toop-edm:v2.0</SimpleValue>
-      </Value>
-          <Value ColumnRef="since">
-        <SimpleValue>3</SimpleValue>
-      </Value>
-          <Value ColumnRef="deprecated">
-        <SimpleValue>false</SimpleValue>
-      </Value>
-    </Row>
-      <Row>
-      <Value ColumnRef="name">
-        <SimpleValue>EDM Response (Document)</SimpleValue>
+        <SimpleValue>EDM Response</SimpleValue>
       </Value>
           <Value ColumnRef="doctypeid">
         <SimpleValue>QueryResponse::toop-edm:v2.0</SimpleValue>
