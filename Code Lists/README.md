@@ -10,6 +10,17 @@ Latest release: **v2**
 
 ## Version history
 
+* v3 - work in progress
+    * Document type identifiers 
+      * Added "EDM Concept Request" - `RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.0`
+      * Added "EDM Document Request" - `FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.0`
+      * Added "EDM Response (Concept)" - `QueryResponse::toop-edm:v2.0`
+      * Added "EDM Response (Document)" - `QueryResponse::toop-edm:v2.0`
+    * Process identifiers
+      * Added "TOOP DataQuery" - `urn:eu.toop.process.dataquery`
+      * Added "TOOP DocumentQuery" - `urn:eu.toop.process.documentquery`
+      * Added "TOOP DocumentReferenceQuery" - `urn:eu.toop.process.documentreferencequery`
+
 * v2 - 2019-03-20
     * Document type identifiers 
         * Added new identifiers for data model version 1.4.0
