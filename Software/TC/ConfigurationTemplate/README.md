@@ -1,6 +1,8 @@
-# TOOP Connector Configuration template
+# TOOP Connector 0.10.x Configuration template
 
-This page contains the template configuration for TOOP Connector (TC( to be deployed at member state level.
+**This page is out of date**
+
+This page contains the template configuration for TOOP Connector (TC) to be deployed at member state level.
 
 The main WAR file of the TC to be used in a Java Application Server (like Tomcat) can be retrieved from http://repo2.maven.apache.org/maven2/eu/toop/toop-connector-webapp/0.10.2/toop-connector-webapp-0.10.2.war. 
 
