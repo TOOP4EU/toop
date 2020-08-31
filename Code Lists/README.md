@@ -10,6 +10,19 @@ Latest release: **v3**
 
 ## Version history
 
+* v4 - 2020-08-31
+    * Document type identifiers
+      * Added "Ship Certificate Data" - `ShipCertificate::SHIPCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.0`
+      * Added "Crew Certificate Data" - `CrewCertificate::CREWCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.0`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.registeredorganization::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.registeredorganization::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.evidence-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.evidence-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.evidence::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.evidence::1.40`
+
 * v3 - 2020-05-29
     * Document type identifiers 
       * Added "EDM Concept Request on RegisteredOrganisation Data" - `RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.0`
