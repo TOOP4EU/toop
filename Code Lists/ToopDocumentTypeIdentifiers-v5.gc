@@ -471,33 +471,5 @@
         <SimpleValue>false</SimpleValue>
       </Value>
     </Row>
-      <Row>
-      <Value ColumnRef="name">
-        <SimpleValue>Ship Certificate Data 2.1</SimpleValue>
-      </Value>
-          <Value ColumnRef="doctypeid">
-        <SimpleValue>ShipCertificate::SHIPCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1</SimpleValue>
-      </Value>
-          <Value ColumnRef="since">
-        <SimpleValue>5</SimpleValue>
-      </Value>
-          <Value ColumnRef="deprecated">
-        <SimpleValue>false</SimpleValue>
-      </Value>
-    </Row>
-      <Row>
-      <Value ColumnRef="name">
-        <SimpleValue>Crew Certificate Data 2.1</SimpleValue>
-      </Value>
-          <Value ColumnRef="doctypeid">
-        <SimpleValue>CrewCertificate::CREWCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1</SimpleValue>
-      </Value>
-          <Value ColumnRef="since">
-        <SimpleValue>5</SimpleValue>
-      </Value>
-          <Value ColumnRef="deprecated">
-        <SimpleValue>false</SimpleValue>
-      </Value>
-    </Row>
   </SimpleCodeList>
 </gc:CodeList>

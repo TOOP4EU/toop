@@ -28,6 +28,4 @@ Do NOT edit!-->
   <document-type name="EDM Concept Request on RegisteredOrganisation Data 2.1" id="RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.1" since="5" deprecated="false" />
   <document-type name="EDM Document Request on Fincancial Record 2.1" id="FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.1" since="5" deprecated="false" />
   <document-type name="EDM Response 2.1" id="QueryResponse::toop-edm:v2.1" since="5" deprecated="false" />
-  <document-type name="Ship Certificate Data 2.1" id="ShipCertificate::SHIPCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1" since="5" deprecated="false" />
-  <document-type name="Crew Certificate Data 2.1" id="CrewCertificate::CREWCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1" since="5" deprecated="false" />
 </root>
