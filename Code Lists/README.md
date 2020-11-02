@@ -15,8 +15,6 @@ Latest release: **v3**
       * Added "EDM Concept Request on RegisteredOrganisation Data 2.1" - `RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.1`
       * Added "EDM Document Request on Fincancial Record 2.1 - `FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.1`
       * Added "EDM Response 2.1 - `QueryResponse::toop-edm:v2.1`
-      * Added "Ship Certificate Data 2.1 - `ShipCertificate::SHIPCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1`
-      * Added "Crew Certificate Data 2.1 - `CrewCertificate::CREWCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1`
       * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate-list::1.40`
       * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.shipcertificate-list::1.40`
       * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate::1.40`
