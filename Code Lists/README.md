@@ -10,6 +10,32 @@ Latest release: **v3**
 
 ## Version history
 
+* v5 - 2020-11-02
+    * Document type identifiers
+      * Added "EDM Concept Request on RegisteredOrganisation Data 2.1" - `RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.1`
+      * Added "EDM Document Request on Fincancial Record 2.1 - `FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.1`
+      * Added "EDM Response 2.1 - `QueryResponse::toop-edm:v2.1`
+      * Added "Ship Certificate Data 2.1 - `ShipCertificate::SHIPCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1`
+      * Added "Crew Certificate Data 2.1 - `CrewCertificate::CREWCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.1`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.shipcertificate-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.shipcertificate::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.shipcertificate::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.crewcertificate-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.crewcertificate-list::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Request##urn:eu.toop.request.crewcertificate::1.40`
+      * Deprecated `urn:eu:toop:ns:dataexchange-1p40::Response##urn:eu.toop.response.crewcertificate::1.40`
+      * Deprecated `RegisteredOrganization::REGISTERED_ORGANIZATION_TYPE::CONCEPT##CCCEV::toop-edm:v2.0`
+      * Deprecated `FinancialRecord::FINANCIAL_RECORD_TYPE::UNSTRUCTURED::toop-edm:v2.0`
+      * Deprecated `QueryResponse::toop-edm:v2.0`
+      * Deprecated `ShipCertificate::SHIPCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.0`
+      * Deprecated `CrewCertificate::CREWCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.0`
+
+    * Process identifiers      
+      * Deprecated `urn:eu.toop.process.datarequestresponse`
+      * Deprecated `urn:eu.toop.process.documentrequestresponse`
+      * Deprecated `urn:eu.toop.process.twophasedrequestresponse`
+
 * v4 - 2020-08-31
     * Document type identifiers
       * Added "Ship Certificate Data" - `ShipCertificate::SHIPCERTIFICATE_TYPE::UNSTRUCTURED::toop-edm:v2.0`
